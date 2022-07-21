@@ -314,4 +314,3 @@ for(let day of days) {
   console.log(day)
 }
 ```
-```
