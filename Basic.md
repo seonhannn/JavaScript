@@ -155,4 +155,163 @@ sayHello('seonhannn');
 
 매개변수를 없애려면 작성하지 않으면 된다.
 
-```function
+```
+function sayHello(name) {
+  let msg = 'Hello';
+  if(name) {
+    msg += `, ${name}`;
+  }
+  console.log(msg);
+}
+
+sayHello('seonhannn');
+```
+
+지역 변수를 전역 변수와 같은 이름으로 선언할 수 있다. 
+
+함수는 return 으로 값을 반환할 수 있다. 함수를 종료하는 목적으로 사용하기도 한다.
+
+함수 선언문은 어디서든 호출 가능하나, 함수 표현식은 함수에 도달해야 사용할 수 있다.
+
+화살표 함수는 다음과 같다.
+
+```
+function showError() {
+  console.log('error');
+}
+
+let showError = () => {
+  console.log('error');
+}
+```
+
+객체는 다음과 같이 생성할 수 있다.
+
+```
+const user = {
+  name : 'seonhannn',
+  age : 21,
+}
+```
+프로퍼티의 구분은 쉼표로 하며, 코드를 관리하기 쉽도록 마지막 프로퍼티에도 쉼표를 추가해주는 것이 좋다.
+
+객체에 접근할 때는 점 또는 대괄호를 사용한다.
+
+```
+const user = {
+  name : 'seonhannn',
+  age : 21,
+}
+
+console.log(user.name);
+user[name] = 'jiseon';
+console.log(user.name);
+```
+
+객체를 삭제할 때는 delete 키워드를 사용한다.
+
+```
+const user = {
+  name : 'seonhannn',
+  age : 21,
+}
+
+delete.user.age;
+console.log(user.age);
+```
+
+단축 프로퍼티는 다음과 같다.
+
+```
+const name = 'seonhannn';
+const age = 21;
+
+const user = {
+  name,
+  age,
+  gender : 'female',
+}
+```
+
+프로퍼티 존재 여부를 확인할 때는 in을 사용한다.
+
+```
+const user = {
+  name : 'seonhannn',
+  age : 21,
+}
+
+console.log('age' in user);
+```
+
+```
+function makeObject(name, age) {
+  return {
+    name,
+    age,
+    hobby : 'read a book',
+  }
+}
+
+const Jiseon = makeObject('seonhannn', 21);
+console.log(Jiseon);
+console.log('age' in Jiseon);
+console.log('birthday' in Jiseon);
+```
+
+```
+function isAdult(user) {
+  if(!('age' in user) || user.age < 20) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+const Jiseon = {
+  name : 'Jiseon',
+  age : 21,
+}
+
+isAdult(Jiseon);
+```
+
+객체의 프로퍼티를 추출할 때 for in을 사용한다.
+
+```
+const seonhannn = {
+  name : 'seonhannn',
+  age : 21,
+}
+
+for(key in seonhannn) {
+  console.log(seonhannn.key);
+}
+```
+
+객체 프로퍼티로 할당된 함수를 메서드라고 한다.
+
+배열은 순서가 있는 리스트이다. 숫자, 객체, 문자, 함수 등을 포함할 수 있다.
+
+push - 배열 끝에 요소를 추가
+
+pop - 배열 끝 요소를 제거
+
+shift, unshift는 배열 앞의 요소를 추가하고 제거한다. 여러 개의 요소를 제어할 수도 있다.
+
+```
+let days = ['mon', 'tue', 'wed'];
+days[0] = 'sun';
+console.log(days.length); // 배열 길이 확인
+days.push('thu');
+days.shift('sat');
+
+for(let index = 0; index < days.length; index++) {
+  console.log(days[index];
+}
+
+for(let day of days) {
+  console.log(day)
+}
+```
+```
